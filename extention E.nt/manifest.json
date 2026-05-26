@@ -1,0 +1,20 @@
+{
+  "name": "E.nt",
+  "description": "Customisation extention for ENT",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "css":["scripts/style.css"],
+      "matches": [
+        "https://aubrac-isere.ent.auvergnerhonealpes.fr/*",
+        "https://cas.ent.auvergnerhonealpes.fr/*",
+        "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/*"
+      ]
+    }
+  ]
+}

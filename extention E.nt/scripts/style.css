@@ -1,0 +1,111 @@
+:root {
+    --color-12: #0c0c0c !important;
+    --header--background-color: #0d0d0d !important;
+    --bar--background-color: #0d0d0d !important;
+    --html--background-color: #121212 !important;
+    --color-neutral-lightest: #242424 !important;
+    --services-shortcut-a-hover--background-color: #3c3c3c !important;
+    --services-shortcut-a-hover--color: #fff !important;
+    --services-shortcut-item-actif--background-color: #6f6f6f !important;
+    --services-shortcut-a-activ--color: #fff !important;
+    --menu--color: #8b8b8b !important;
+    --sko-blue-500: #0fabff !important;
+    --menu-a-hover--color: #bababa !important;
+    --color-success-lighter: #353535 !important;
+    --color-11: #000 !important;
+    --color-00: #ddd !important;
+    --color-warn-lighter: #3b3b3b !important;
+}
+body {
+    color: #fff !important;
+}
+.cas__header {
+    background-color: #3b3b3b !important;
+}
+html {
+    background-color: #3b3b3b !important;
+}
+input[type=radio]:checked ~ label:before {
+    filter: invert(1) !important;
+}
+input[type=radio]~label:before {
+    filter: invert(1) !important;
+}
+.scheduler__slot {
+    background: #3d3d3d;
+}
+.header {
+    --burger-hover--background-color: #000 !important;
+}
+.user {
+    color: #fff !important;
+}
+.btn--inverted {
+    color: #b2b2b2 !important;
+}
+.text--slate-dark {
+    color: #979797 !important;
+}
+.header__help a {
+    background: #1f1f1f !important;
+    color: #d8d8d8 !important;
+}
+.pane {
+    background-color: #323232 !important;
+}
+.btn--as-link, .btn--as-link-underline {
+    color: #fff !important;
+}
+#tarteaucitronRoot #tarteaucitronAlertBig {
+    background: #323232 !important;
+}
+#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert {
+    color: #ffffff !important;
+}
+.tarteaucitronH1 {
+color: #ffffff !important;
+background: #474747 !important
+}
+.tarteaucitronH2 {
+color: #ffffff !important;
+background: #474747 !important
+}
+#tarteaucitronClosePanel, #tarteaucitronAlertSmall #tarteaucitronCookiesListContainer #tarteaucitronClosePanelCookie {
+background: #474747 !important;
+color: #ffffff !important;
+}
+#tarteaucitronServices .tarteaucitronMainLine {
+background: #474747 !important;
+}
+#tarteaucitronInfo {
+color: #ffffff !important;
+background: #464646 !important;
+}
+#tarteaucitronBorder #tarteaucitronTitle {
+    color: #ffffff !important;
+}
+button#tarteaucitronBack {
+    background: #000000 !important;
+}
+#tarteaucitron a {
+    color: #fff !important;
+}
+#tarteaucitron div {
+    color: #fff !important;
+    background: #464646 !important;
+}
+#tarteaucitron li {
+color: #fff !important;
+background: #464646 !important;
+}
+#tarteaucitron span:not(.tarteaucitronCheck, .tarteaucitronCross) {
+color: #fff !important;
+background: #464646 !important;
+}
+.tarteaucitronTitle button {
+    color: #fff !important;
+    background: #464646 !important;
+}
+.tarteaucitronPlus::before {
+    color: #fff !important;
+}
