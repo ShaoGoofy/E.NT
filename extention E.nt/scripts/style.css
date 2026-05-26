@@ -25,12 +25,16 @@ body {
 html {
     background-color: #3b3b3b !important;
 }
+#authentification_logo {
+opacity: 0
+}
 input[type=radio]:checked ~ label:before {
     filter: invert(1) !important;
 }
 input[type=radio]~label:before {
     filter: invert(1) !important;
 }
+
 .scheduler__slot {
     background: #3d3d3d;
 }
@@ -57,18 +61,18 @@ input[type=radio]~label:before {
     color: #fff !important;
 }
 #tarteaucitronRoot #tarteaucitronAlertBig {
-    background: #323232 !important;
+background: #323232 !important;
 }
 #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert {
-    color: #ffffff !important;
+color: #ffffff !important;
 }
 .tarteaucitronH1 {
-color: #ffffff !important;
-background: #474747 !important
+    color: #ffffff !important;
+    background: #474747 !important
 }
 .tarteaucitronH2 {
-color: #ffffff !important;
-background: #474747 !important
+    color: #ffffff !important;
+    background: #474747 !important
 }
 #tarteaucitronClosePanel, #tarteaucitronAlertSmall #tarteaucitronCookiesListContainer #tarteaucitronClosePanelCookie {
 background: #474747 !important;
@@ -82,17 +86,17 @@ color: #ffffff !important;
 background: #464646 !important;
 }
 #tarteaucitronBorder #tarteaucitronTitle {
-    color: #ffffff !important;
+color: #ffffff !important;
 }
 button#tarteaucitronBack {
     background: #000000 !important;
 }
 #tarteaucitron a {
-    color: #fff !important;
+color: #fff !important;
 }
 #tarteaucitron div {
-    color: #fff !important;
-    background: #464646 !important;
+color: #fff !important;
+background: #464646 !important;
 }
 #tarteaucitron li {
 color: #fff !important;
