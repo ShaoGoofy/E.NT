@@ -153,6 +153,18 @@ li.row--full {
     border: 2px solid;
     border-radius: 20px;
 }
+.msg.msg--NEUTRE.msg--neutral.js-notice {
+    background: transparent !important;
+    border: 2px solid white !important;
+    border-radius: 20px;
+}
+.msg--neutral {
+    color: #dddddd !important;
+}
+.global-notices--panel {
+    border: none !important;
+    padding: none !important;
+}
 .icon--attached-file {
     background-image: url("https://raw.githubusercontent.com/ShaoGoofy/E.NT/c1ab1b761322cc5e87659033e50b90260837e650/icons/linked-file.svg") !important;
     transform: scale(1.7);
@@ -161,6 +173,23 @@ li.row--full {
 .jstree--cosy .jstree-anchor, .jstree--cosy .jstree-icon, .jstree--cosy .jstree-wholerow {
     line-height: 3rem !important;
     min-height: 3rem !important;
+}
+.form__control:not(select, #nomDocLink), .form__control:is([type=text],[type=email],[type=password],[type=url],[type=tel],[type=search],[type=file],[type=number],[type=month],[type=week],[type=date],[type=time],[type=datetime],[type=datetime-local]), div.form__control, textarea.form__control {
+    background-color: #141414 !important;
+    border: 1px solid #fff !important;
+    border-radius: 20px 0px 0px 20px;
+}
+.btn.btn--primary.js-valider-recherche {
+    background-color: #141414 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    border-radius: 0px 20px 20px 0px;
+}
+.btn.btn--primary.js-afficherNouveauMessage {
+    background-color: #484848 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    border-radius: 20px 20px 20px 20px;
 }
 .icon--more-primary {
     transform: translate(-70%, 50%);
@@ -201,6 +230,17 @@ li.row--full {
 }
 .cahier_texte {
     background: #121212 !important;
+    color: #fff !important;
+}
+/* files */
+article.card {
+    border: 4px solid #000000;
+    border-radius: 20px
+}
+.card:before {
+    border-radius: 15px;
+}
+#js-fullscreen span {
     color: #fff !important;
 }
 /* that one weird page */
