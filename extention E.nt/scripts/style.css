@@ -1,8 +1,11 @@
 :root {
-    --total-background-color: #121212;
-    --border-radius: 0px;
-    --border-radius-top: 0px 0px 0px 0px;
+    --bg: #121212;
+    --sidebarbg: #0c0c0c;
+    --panelbg: #242424;
+    --rounded: 0px;
+    --roundedtop: 0px 0px 0px 0px;
     --bordercolor: #b2b2b2;
+    --animated: 0.2s;
 
     --color-12: #0c0c0c !important;
     --header--background-color: #0d0d0d !important;
@@ -23,20 +26,28 @@
     --color-primary-darken-20: #d7d7d7 !important;
     --color-primary: #959595 !important;
 }
+/*temp shit*/
+ul.user {
+    display: none;
+}
+.hide-lt--lg.text--ellipsis {
+    display: none;
+}
 body {
     color: #fff !important;
-    background-color: var(--total-background-color) !important;
+    background-color: var(--bg) !important;
 }
 /* main page */
 .panel--outlined {
-    border-radius: var(--border-radius) !important;
+    border-radius: var(--rounded) !important;
     border: var(--bordercolor) solid 4px !important;
+    background: var(--panelbg) !important;
 }
 .cartouche {
-    --background-color: #242424 !important;
-    --border-color: #ffffff !important;
-    --border-width: 2px !important;
-    --color: #ffffff !important;
+    background-color: #242424 !important;
+    border-color: #ffffff !important;
+    border-width: 2px !important;
+    color: #ffffff !important;
     border-radius: 10px !important;
 }
 .btn.btn--sm.btn--secondary {
@@ -48,18 +59,51 @@ body {
     border-radius: 10px !important;
     color: white !important;
 }
+.burger[aria-expanded="false"] {
+    width: 110px;
+    transition: width var(--animated) ease;
+    background-color: color-mix(in srgb, var(--sidebarbg) 50%, black);
+}
+.burger[aria-expanded="true"] {
+    width: 256px;
+    transition: width var(--animated) ease;
+    background-color: color-mix(in srgb, var(--sidebarbg) 50%, black);
+}
+.burger[aria-expanded="true"]:hover {
+    background-color: color-mix(in srgb, var(--sidebarbg) 70%, black);
+}
+.burger[aria-expanded="false"]:hover {
+    background-color: color-mix(in srgb, var(--sidebarbg) 70%, black);
+}
+.burger {
+    background-color: color-mix(in srgb, var(--sidebarbg) 50%, black);
+}
+.burger:focus {
+    background-color: color-mix(in srgb, var(--sidebarbg) 50%, black) !important;
+}
+.js-menu[data-menu-is-expanded="false"]{
+    transition: width var(--animated) ease;
+}
+.js-menu[data-menu-is-expanded="true"] {
+    transition: width var(--animated) ease;
+    overflow: hidden;
+}
+.js-menu {
+    background-color: var(--sidebarbg) !important;
+}
 .cas__header {
     content: none !important;
-    background-color: #3b3b3b !important;
+    background-color: var(--bg) !important;
 }
+
 html {
-    background-color: var(--total-background-color) !important;
+    background-color: var(--bg)) !important;
 }
 #authentification_logo {
     display: none !important
 }
 .scrolled.fr-header-padding-top, .scrolled.fr-header-padding-top--minimized {
-    background-color: #3b3b3b !important;
+    background-color: var(--bg)) !important;
 }
 .fs-20.fr-mb-3w {
     color: #fff !important;
@@ -69,8 +113,8 @@ html {
 }
 .choixProfil__btn {
      background-color: #626262 !important;
-     border: 2px solid white !important;
-     border-radius: var(--border-radius);
+     border: 2px solid var(--bordercolor) !important;
+     border-radius: var(--rounded);
 }
 .fr-col-md-8.fr-col-12 {
     transform: scale(1.3);
@@ -83,21 +127,22 @@ html {
 .cas__panel {
     transform: scale(1.2);
     transform-origin: center;
+    margin-bottom: 100vh !important;
 }
 .services-shortcut__link:hover {
     transform: translateX(10px);
 }
 .services-shortcut__link {
     transform: translateX(0px);
-    transition: transform 0.2s ease;
+    transition: transform var(--animated) ease;
 }
 .services-shortcut {
     transform: translateX(0px);
-    transition: transform 0.2s ease;
+    transition: transform var(---animated) ease;
 }
 button[data-modaltrigger="modalCreerDocOffice"]:hover {
     transform: translate(10px);
-    transition: transform 0.2s ease;
+    transition: transform var(--animated) ease;
 }
 input[type=radio]:checked ~ label:before {
     filter: invert(1) !important;
@@ -111,7 +156,7 @@ input[type=radio]~label:before {
 .fr-tabs__panel {
     background-color: #585858 !important;
     border: 2px solid var(--bordercolor);
-    border-radius: var(--border-radius);
+    border-radius: var(--rounded);
     height: 85% !important;
 }
 .fr-tabs {
@@ -121,7 +166,7 @@ input[type=radio]~label:before {
     background-color: #585858 !important;
     background-image: none !important;
     border: 2px solid var(--bordercolor);
-    border-radius: var(--border-radius-top);
+    border-radius: var(--roundedtop);
 }
 .fr-tabs__list {
     background-color: transparent
@@ -167,9 +212,6 @@ input[type=radio]~label:before {
 }
 .jstree-default>.jstree-container-ul>.jstree-node {
     margin-bottom: 10px;
-}
-.col--md-7, .col--md-3 {
-    transform: translateY(20%);
 }
 li.row--full {
     border: 2px solid;
@@ -222,14 +264,11 @@ li.row--full {
     --color: #fff !important;
     --cartouche-active--box-shadow-color: var(--color-comp-light);
 }
-#header_profil, #footer, #chatmd-anchor, #header_connexion, .list--inlined, .fr-callout, .sidebar {
+#header_profil, #footer, #chatmd-anchor, #header_connexion, .list--inlined:not(.tabs__list), .fr-callout, .sidebar {
     display: none !important;
 }
 .scheduler__slot {
     background: #3d3d3d;
-}
-.header {
-    --burger-hover--background-color: #000 !important;
 }
 .user {
     color: #fff !important;
@@ -257,10 +296,10 @@ li.row--full {
 /* files */
 article.card {
     border: 4px solid #000000;
-    border-radius: var(--border-radius)
+    border-radius: var(--rounded)
 }
 .card:before {
-    border-radius: var(--border-radius)-5px;
+    border-radius: var(--rounded)-5px;
 }
 #js-fullscreen span {
     color: #fff !important;
@@ -275,11 +314,11 @@ article.card {
     color: #fafafa !important;
 }
 .form__control {
-    border-radius: var(--border-radius)/2;
+    border-radius: var(--rounded)/2;
 }
 select.form__control {
     color: #ffffff !important;
-    border-radius: var(--border-radius)/2;
+    border-radius: var(--rounded)/2;
 }
 .cartouche--bg-comp-light {
     color: #fff !important;
