@@ -1,9 +1,19 @@
-chrome.storage.local.get(["bg", "text", "bordercolor", "rounded", "roundedtop"], (result) => {
+chrome.storage.local.get(["bg", "sidebarbg", "panelbg", "text", "bordercolor", "rounded", "roundedtop", "animated"], (result) => {
 
     document.documentElement.style.setProperty(
-        "--total-background-color",
+        "--bg",
         result.bg || "#121212"
     );
+
+    document.documentElement.style.setProperty(
+        "--sidebarbg",
+        result.sidebarbg || "#0c0c0c"
+    );
+
+    document.documentElement.style.setProperty(
+        "--panelbg",
+        result.panelbg || "#242424"
+    )
 
     document.documentElement.style.setProperty(
         "--text",
@@ -16,13 +26,28 @@ chrome.storage.local.get(["bg", "text", "bordercolor", "rounded", "roundedtop"],
     );
 
     document.documentElement.style.setProperty(
-        "--border-radius",
+        "--rounded",
         result.rounded || "0px"
     );
 
     document.documentElement.style.setProperty(
-        "--border-radius-top",
+        "--roundedtop",
         result.roundedtop || "0px"
     );
 
+    document.documentElement.style.setProperty(
+        "--animated",
+        result.animated || "0s"
+    );
+
+});
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "local") return;
+
+    for (const [key, value] of Object.entries(changes)) {
+        document.documentElement.style.setProperty(
+            `--${key}`,
+            value.newValue
+        );
+    }
 });
