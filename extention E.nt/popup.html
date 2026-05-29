@@ -1,5 +1,37 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>Hello Extensions</h1>
-  </body>
+
+<head>
+<link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+<div class="row">
+    <input type="color" id="bg">
+    <span>background</span>
+</div>
+
+<div class="row">
+    <input type="color" id="panel">
+    <span>panel background</span>
+</div>
+
+<div class="row">
+    <input type="color" id="bordercolor">
+    <span>panel border</span>
+</div>
+
+<label>
+    <input type="checkbox" id="rounded">
+    Enable rounded corners
+</label>
+
+<div class="row">
+    <input type="button" id="resetall">
+    <span>reset all</span>
+</div>
+
+<script src="popup.js"></script>
+</body>
 </html>
