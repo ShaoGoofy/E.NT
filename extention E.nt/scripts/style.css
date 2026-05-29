@@ -1,4 +1,9 @@
 :root {
+    --total-background-color: #121212;
+    --border-radius: 0px;
+    --border-radius-top: 0px 0px 0px 0px;
+    --bordercolor: #b2b2b2;
+
     --color-12: #0c0c0c !important;
     --header--background-color: #0d0d0d !important;
     --bar--background-color: #0d0d0d !important;
@@ -20,15 +25,12 @@
 }
 body {
     color: #fff !important;
+    background-color: var(--total-background-color) !important;
 }
 /* main page */
 .panel--outlined {
-    border-radius: 20px;
-    border: #b2b2b2 solid 4px !important;
-}
-.panel--outlined {
-    border: var(--base-border-width) solid var(--color-comp-light);
-    border-radius: 20px !important;
+    border-radius: var(--border-radius) !important;
+    border: var(--bordercolor) solid 4px !important;
 }
 .cartouche {
     --background-color: #242424 !important;
@@ -51,7 +53,7 @@ body {
     background-color: #3b3b3b !important;
 }
 html {
-    background-color: #3b3b3b !important;
+    background-color: var(--total-background-color) !important;
 }
 #authentification_logo {
     display: none !important
@@ -67,10 +69,16 @@ html {
 }
 .choixProfil__btn {
      background-color: #626262 !important;
+     border: 2px solid white !important;
+     border-radius: var(--border-radius);
 }
 .fr-col-md-8.fr-col-12 {
     transform: scale(1.3);
     transform-origin: right;
+}
+.fs-20.fr-mb-3w {
+    transform: scale(1.7);
+    transform-origin: left;
 }
 .cas__panel {
     transform: scale(1.2);
@@ -79,11 +87,17 @@ html {
 .services-shortcut__link:hover {
     transform: translateX(10px);
 }
+.services-shortcut__link {
+    transform: translateX(0px);
+    transition: transform 0.2s ease;
+}
 .services-shortcut {
-    transform: translate(-10px);
+    transform: translateX(0px);
+    transition: transform 0.2s ease;
 }
 button[data-modaltrigger="modalCreerDocOffice"]:hover {
     transform: translate(10px);
+    transition: transform 0.2s ease;
 }
 input[type=radio]:checked ~ label:before {
     filter: invert(1) !important;
@@ -96,13 +110,21 @@ input[type=radio]~label:before {
 }
 .fr-tabs__panel {
     background-color: #585858 !important;
+    border: 2px solid var(--bordercolor);
+    border-radius: var(--border-radius);
+    height: 85% !important;
+}
+.fr-tabs {
+    box-shadow: none !important;
 }
 #onglet-connexion {
     background-color: #585858 !important;
     background-image: none !important;
+    border: 2px solid var(--bordercolor);
+    border-radius: var(--border-radius-top);
 }
 .fr-tabs__list {
-    background-color: #3b3b3b
+    background-color: transparent
 }
 #username.fr-input, #password.fr-input {
     Background: #3b3b3b;
@@ -235,10 +257,10 @@ li.row--full {
 /* files */
 article.card {
     border: 4px solid #000000;
-    border-radius: 20px
+    border-radius: var(--border-radius)
 }
 .card:before {
-    border-radius: 15px;
+    border-radius: var(--border-radius)-5px;
 }
 #js-fullscreen span {
     color: #fff !important;
@@ -253,11 +275,11 @@ article.card {
     color: #fafafa !important;
 }
 .form__control {
-    border-radius: 10px;
+    border-radius: var(--border-radius)/2;
 }
 select.form__control {
     color: #ffffff !important;
-    border-radius: 10px;
+    border-radius: var(--border-radius)/2;
 }
 .cartouche--bg-comp-light {
     color: #fff !important;
