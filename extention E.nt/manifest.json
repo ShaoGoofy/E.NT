@@ -7,13 +7,16 @@
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "css":["scripts/style.css"],
+      "js":["scripts/content.js"],
       "matches": [
         "https://aubrac-isere.ent.auvergnerhonealpes.fr/*",
         "https://cas.ent.auvergnerhonealpes.fr/*",
-        "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/*"
+        "https://educonnect.education.gouv.fr/idp/profile/SAML2/POST/*",
+        "https://www.ent.auvergnerhonealpes.fr/*"
       ]
     }
   ]
