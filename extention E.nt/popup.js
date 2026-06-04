@@ -15,6 +15,7 @@ const animated = document.getElementById("animated");
 const bgtext = document.getElementById("bgtext");
 const panelbgtext = document.getElementById("panelbgtext");
 const bordercolortext = document.getElementById("bordercolortext")
+const sidebarbgtext = document.getElementById("sidebarbgtext")
 
 //load color pickers
 
@@ -25,8 +26,8 @@ chrome.storage.local.get("bg").then((result) => {
 });
 // load panelbg
 chrome.storage.local.get(["panelbg"], (result) => {
-  panelbg.value = result.panelbg || "#121212";
-  panelbgtext.value = result.bg || "#121212";
+  panelbg.value = result.panelbg || "#242424";
+  panelbgtext.value = result.bg || "#242424";
 });
 // load bordercolor
 chrome.storage.local.get(["bordercolor"], (result) => {
@@ -36,6 +37,7 @@ chrome.storage.local.get(["bordercolor"], (result) => {
 // load sidebarbg
 chrome.storage.local.get(["sidebarbg"], (result) => {
   sidebarbg.value = result.sidebarbg || "#0c0c0c"
+  sidebarbgtext.value = result.sidebarbg || "#0c0c0c"
 });
 // load rounded
 chrome.storage.local.get(["rounded"], (result) => {
@@ -45,10 +47,6 @@ chrome.storage.local.get(["rounded"], (result) => {
 chrome.storage.local.get(["animated"], (result) => {
   animated.checked = result.animated === "0.2s";
 });
-
-//load text box colors
-
-
 
 // save bg
 bg.addEventListener("input", () => {
@@ -145,6 +143,19 @@ bordercolortext.addEventListener("change", () => {
   bordercolor.value = value;
   chrome.storage.local.set({ bordercolor: value });
 });
+
+//save sidebarbgtext
+sidebarbgtext.addEventListener("change", () => {
+  let value = sidebarbgtext.value.trim();
+
+  if (!value.startsWith("#")) {
+    value = "#" + value;
+  }
+
+  sidebarbgtext.value = value;
+  sidebarbg.value = value;
+  chrome.storage.local.set({ sidebarbg: value });
+});
 // reset everything
 
 resetall.addEventListener("click", () => {
@@ -156,13 +167,14 @@ resetall.addEventListener("click", () => {
     bordercolor: "#b2b2b2",
     bordercolortext: "#b2b2b2",
     sidebarbg: "#0c0c0c",
+    sidebarbgtext: "#0c0c0c",
     text: "#ffffff",
     rounded: "20px",
     animated: "0.2s"
   };
   chrome.storage.local.set(defaults);
   // update color pickers (ONLY color inputs)
-  for (const key of ["bg", "bgtext", "panelbg", "panelbgtext", "bordercolor", "bordercolortext", "sidebarbg", "text", "rounded"]) {
+  for (const key of ["bg", "bgtext", "panelbg", "panelbgtext", "bordercolor", "bordercolortext", "sidebarbg", "sidebarbgtext", "text", "rounded"]) {
     const el = document.getElementById(key);
     if (el) {
       el.value = defaults[key];
