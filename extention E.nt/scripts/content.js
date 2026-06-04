@@ -1,4 +1,4 @@
-chrome.storage.local.get(["bg", "sidebarbg", "panelbg", "text", "bordercolor", "rounded", "roundedtop", "animated"], (result) => {
+chrome.storage.local.get(["bg", "sidebarbg", "panelbg", "text", "bordercolor", "rounded", "animated"], (result) => {
 
     document.documentElement.style.setProperty(
         "--bg",
@@ -31,14 +31,9 @@ chrome.storage.local.get(["bg", "sidebarbg", "panelbg", "text", "bordercolor", "
     );
 
     document.documentElement.style.setProperty(
-        "--roundedtop",
-        result.roundedtop || "0px"
-    );
-
-    document.documentElement.style.setProperty(
         "--animated",
         result.animated || "0s"
-    );
+   );
 
 });
 chrome.storage.onChanged.addListener((changes, area) => {
