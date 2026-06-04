@@ -3,7 +3,7 @@
     --sidebarbg: #0c0c0c;
     --panelbg: #242424;
     --rounded: 0px;
-    --roundedtop: 0px 0px 0px 0px;
+    --roundedtop: var(--rounded) var(--rounded) 0px 0px;
     --bordercolor: #b2b2b2;
     --animated: 0.2s;
 
@@ -27,7 +27,7 @@
     --color-primary: #959595 !important;
 }
 /*temp shit*/
-ul.user {
+.user li:first-child {
     display: none;
 }
 .hide-lt--lg.text--ellipsis {
@@ -91,11 +91,22 @@ body {
 .js-menu {
     background-color: var(--sidebarbg) !important;
 }
+
+/* login */
 .cas__header {
     content: none !important;
     background-color: var(--bg) !important;
 }
-
+.cas__panel {
+    transform: scale(1.2);
+    transform-origin: center;
+    margin-bottom: 100vh !important;
+    background-color: var(--panelbg) !important;
+}
+#button-submit.btn.btn--primary {
+    border: 2px solid var(--bordercolor);
+    border-radius: var(--rounded);
+}
 html {
     background-color: var(--bg)) !important;
 }
@@ -110,6 +121,12 @@ html {
 }
 #bouton_eleve, #bouton_responsable {
      background-color: #868686 !important;
+     border: 2px solid var(--bordercolor) !important;
+     border-radius: var(--rounded);
+}
+#bouton_valider {
+    border: 2px solid var(--bordercolor);
+    border-radius: var(--rounded);
 }
 .choixProfil__btn {
      background-color: #626262 !important;
@@ -124,11 +141,7 @@ html {
     transform: scale(1.7);
     transform-origin: left;
 }
-.cas__panel {
-    transform: scale(1.2);
-    transform-origin: center;
-    margin-bottom: 100vh !important;
-}
+
 .services-shortcut__link:hover {
     transform: translateX(10px);
 }
@@ -325,6 +338,25 @@ select.form__control {
     background: #323232
     border-color: #ffffff !important;
 }
+
+/*expiration*/
+
+.modal__body.js-modal__body {
+    color: #fff !important;
+    background-color: var(--panelbg) !important;
+    border: 2px solid var(--bordercolor) !important;
+    border-radius: var(--rounded);
+    overflow: hidden;
+}
+.js-session-extender-connect.btn.btn--primary {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-radius: var(--rounded)/2 !important;
+}
+.btn.btn--warn.js-btn--warn.js-session-extender_cancel {
+    border-radius: var(--rounded)/2 !important;
+}
+
 /* cookies stuff */
 #tarteaucitronRoot #tarteaucitronAlertBig {
 background: #323232 !important;
