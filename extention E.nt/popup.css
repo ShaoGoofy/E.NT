@@ -60,11 +60,13 @@ button[id="resetall"] {
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  content: text("HELP")
   transition: background-color 0.2s ease;
 }
 button[id="resetall"]:hover {
   background-color: #e50004;
+}
+button[id="resetall"]:active {
+  background-color: #9d0005;
 }
 
 input[type="text"] {
