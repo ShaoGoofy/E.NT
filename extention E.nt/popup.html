@@ -7,14 +7,27 @@
 
 <body>
 
+<div class="row categorytitle">
+  <span>COLORS</span>
+</div>
+
+
 <div class="row">
     <input type="color" id="bg">
+    <input type="text" id="bgtext">
     <span>background</span>
 </div>
 
 <div class="row">
     <input type="color" id="panelbg">
+    <input type="text" id="panelbgtext">
     <span>panel background</span>
+</div>
+
+<div class="row">
+    <input type="color" id="bordercolor">
+    <input type="text" id= "bordercolortext">
+    <span>panel border</span>
 </div>
 
 <div class="row">
@@ -22,14 +35,14 @@
     <span>sidebar background</span>
 </div>
 
-<div class="row">
-    <input type="color" id="bordercolor">
-    <span>panel border</span>
+<div class="row categorytitle">
+  <span>OTHER</span>
 </div>
 
+
 <label>
-    <input type="checkbox" id="rounded">
-    Enable rounded corners
+    <input type="text" id="rounded">
+    Border radius (max 50 min 0)
 </label>
 
 <label>
@@ -38,7 +51,7 @@
 </label>
 
 <div class="row">
-    <input type="button" id="resetall"> reset everything
+    <button type="button" id="resetall"> reset everything </button>
 </div>
 
 <script src="popup.js"></script>
