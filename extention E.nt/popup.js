@@ -27,7 +27,7 @@ chrome.storage.local.get("bg").then((result) => {
 // load panelbg
 chrome.storage.local.get(["panelbg"], (result) => {
   panelbg.value = result.panelbg || "#242424";
-  panelbgtext.value = result.bg || "#242424";
+  panelbgtext.value = result.panelbg || "#242424";
 });
 // load bordercolor
 chrome.storage.local.get(["bordercolor"], (result) => {
@@ -41,7 +41,7 @@ chrome.storage.local.get(["sidebarbg"], (result) => {
 });
 // load rounded
 chrome.storage.local.get(["rounded"], (result) => {
-  rounded.value = result.rounded|| "20px";
+  rounded.value = result.rounded|| "0px";
 });
 //load animated
 chrome.storage.local.get(["animated"], (result) => {
@@ -113,6 +113,10 @@ bgtext.addEventListener("change", () => {
     value = "#" + value;
   }
 
+  if (!isValidHex(value)) {
+    return;
+  }
+
   bgtext.value = value;
   bg.value = value;
   chrome.storage.local.set({ bg: value });
@@ -124,6 +128,10 @@ panelbgtext.addEventListener("change", () => {
 
   if (!value.startsWith("#")) {
     value = "#" + value;
+  }
+
+  if (!isValidHex(value)) {
+    return;
   }
 
   panelbgtext.value = value;
@@ -139,6 +147,10 @@ bordercolortext.addEventListener("change", () => {
     value = "#" + value;
   }
 
+  if (!isValidHex(value)) {
+    return;
+  }
+
   bordercolortext.value = value;
   bordercolor.value = value;
   chrome.storage.local.set({ bordercolor: value });
@@ -150,6 +162,10 @@ sidebarbgtext.addEventListener("change", () => {
 
   if (!value.startsWith("#")) {
     value = "#" + value;
+  }
+
+  if (!isValidHex(value)) {
+    return;
   }
 
   sidebarbgtext.value = value;
