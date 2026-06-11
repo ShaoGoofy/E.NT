@@ -10,21 +10,22 @@
     --color-12: #0c0c0c !important;
     --header--background-color: #0d0d0d !important;
     --bar--background-color: #0d0d0d !important;
-    --html--background-color: #121212 !important;
+    --html--background-color: var(--bg) !important;
     --color-neutral-lightest: #242424 !important;
     --services-shortcut-a-hover--background-color: #3c3c3c !important;
-    --services-shortcut-a-hover--color: #fff !important;
+    --services-shortcut-a-hover--color: white !important;
     --services-shortcut-item-actif--background-color: #6f6f6f !important;
-    --services-shortcut-a-activ--color: #fff !important;
+    --services-shortcut-a-activ--color: white !important;
     --menu--color: #8b8b8b !important;
     --sko-blue-500: #0fabff !important;
     --menu-a-hover--color: #bababa !important;
     --color-success-lighter: #353535 !important;
-    --color-11: #000 !important;
+    --color-11: black !important;
     --color-00: #ddd !important;
     --color-warn-lighter: #3b3b3b !important;
     --color-primary-darken-20: #d7d7d7 !important;
     --color-primary: #959595 !important;
+    --color-neutral-lightest: var(--bg) !important;
 }
 /*temp shit*/
 .user li:first-child {
@@ -34,7 +35,7 @@
     display: none;
 }
 body {
-    color: #fff !important;
+    color: white !important;
     background-color: var(--bg) !important;
 }
 /* main page */
@@ -45,9 +46,9 @@ body {
 }
 .cartouche {
     background-color: #242424 !important;
-    border-color: #ffffff !important;
+    border-color: white !important;
     border-width: 2px !important;
-    color: #ffffff !important;
+    color: white !important;
     border-radius: 10px !important;
 }
 .btn.btn--sm.btn--secondary {
@@ -55,14 +56,14 @@ body {
     border-radius: 10px !important;
 }
 .btn.btn--sm.btn--secondary:not([disabled]):hover {
-    border: 2px solid #fff !important;
+    border: 2px solid white !important;
     border-radius: 10px !important;
     color: white !important;
 }
 .burger[aria-expanded="false"] {
     width: 110px;
     transition: width var(--animated) ease;
-    background-color: color-mix(in srgb, var(--sidebarbg) 50%, black);
+    background-color: (in srgb, var(--sidebarbg) 50%, black);
 }
 .burger[aria-expanded="true"] {
     width: 256px;
@@ -117,7 +118,7 @@ html {
     background-color: var(--bg)) !important;
 }
 .fs-20.fr-mb-3w {
-    color: #fff !important;
+    color: white !important;
 }
 #bouton_eleve, #bouton_responsable {
      background-color: #868686 !important;
@@ -129,9 +130,12 @@ html {
     border-radius: var(--rounded);
 }
 .choixProfil__btn {
-     background-color: #626262 !important;
+     background-color: var(--panelbg) !important;
      border: 2px solid var(--bordercolor) !important;
      border-radius: var(--rounded);
+}
+.choixProfil__btn:hover {
+    background-color: color-mix(in srgb, var(--panelbg) 90%, white) !important;
 }
 .fr-col-md-8.fr-col-12 {
     transform: scale(1.3);
@@ -146,15 +150,16 @@ html {
     transform: translateX(10px);
 }
 .services-shortcut__link {
-    transform: translateX(0px);
     transition: transform var(--animated) ease;
 }
 .services-shortcut {
-    transform: translateX(0px);
     transition: transform var(---animated) ease;
 }
 button[data-modaltrigger="modalCreerDocOffice"]:hover {
     transform: translate(10px);
+    transition: transform var(--animated) ease;
+}
+button[data-modaltrigger="modalCreerDocOffice"] {
     transition: transform var(--animated) ease;
 }
 input[type=radio]:checked ~ label:before {
@@ -167,7 +172,7 @@ input[type=radio]~label:before {
     filter: brightness(0) invert(1) !important;
 }
 .fr-tabs__panel {
-    background-color: #585858 !important;
+    background-color: var(--panelbg) !important;
     border: 2px solid var(--bordercolor);
     border-radius: var(--rounded);
     height: 85% !important;
@@ -176,7 +181,7 @@ input[type=radio]~label:before {
     box-shadow: none !important;
 }
 #onglet-connexion {
-    background-color: #585858 !important;
+    background-color: var(--panelbg) !important;
     background-image: none !important;
     border: 2px solid var(--bordercolor);
     border-radius: var(--roundedtop);
@@ -186,24 +191,19 @@ input[type=radio]~label:before {
 }
 #username.fr-input, #password.fr-input {
     Background: #3b3b3b;
-    color: #fff !important;
+    color: white !important;
 }
 .fr-label{
-    color: #fff !important;
+    color: white !important;
 }
-.grid--column-start-xs-1.grid--column-end-xs-13.grid--column-end-sm-4.grid--column-end-xl-3 {
-    background-color: #3b3b3b;
-}
+/* messages */
 .jstree-default .jstree-wholerow-clicked {
     background: #b0b0b0 !important;
-    border: 2px solid #949494;
+    border: calc(var(--rounded) / 10) solid var(--panelbg);
     border-radius: 10px 0px 0px 10px !important;
 }
 .jstree-label {
-    color: #fff;
-}
-.jstree-default>.jstree-no-dots .jstree-node {
-    background: #444444;
+    color: white;
 }
 .jstree-wholerow-hovered {
     color: #444444
@@ -211,10 +211,10 @@ input[type=radio]~label:before {
 .jstree-default .jstree-wholerow {
     border: 2px solid #949494;
     border-radius: 10px;
-    background: #444444;
+    background: var(--panelbg);
 }
 .jstree-default .jstree-wholerow-hovered {
-    background: #838383 !important;
+    background: color-mix( in srgb, var(--panelbg) 80%, white) !important;
 }
 .jstree-anchor.jstree-hovered {
     transform: translateX(20%) scale(1.2);
@@ -226,14 +226,34 @@ input[type=radio]~label:before {
 .jstree-default>.jstree-container-ul>.jstree-node {
     margin-bottom: 10px;
 }
+.col.col--full.col--xs-12.col--sm-3.col--xl-2.app-layout-1__col.panel--bg-lightest.col--border {
+    background-color: var(--bg);
+}
+.grid--column-start-xs-1.grid--column-end-xs-13, .grid--column-start-xs-1.grid--column-end-xs-13.grid--column-start-sm-4.grid--column-start-xl-3 {
+    background: var(--bg);
+    background-color: var(--bg)
+}
+.pane {
+    background: var(--bg);
+    background-color: var(--bg)
+}
+.content-toolbar.content-toolbar--buttons {
+    background: var(--bg);
+    border: none;
+}
 li.row--full {
-    border: 2px solid;
-    border-radius: 20px;
+    border: 0.5px solid var(--bordercolor);
+    border-radius: calc(var(--rounded) / 2);
+    background-color: var(--panelbg)
+}
+.notices {
+    background: var(--panelbg);
+    overflow: hidden;
 }
 .msg.msg--NEUTRE.msg--neutral.js-notice {
     background: transparent !important;
-    border: 2px solid white !important;
-    border-radius: 20px;
+    border: 2px solid var(--bordercolor) !important;
+    border-radius: var(--rounded);
 }
 .msg--neutral {
     color: #dddddd !important;
@@ -253,19 +273,19 @@ li.row--full {
 }
 .form__control:not(select, #nomDocLink), .form__control:is([type=text],[type=email],[type=password],[type=url],[type=tel],[type=search],[type=file],[type=number],[type=month],[type=week],[type=date],[type=time],[type=datetime],[type=datetime-local]), div.form__control, textarea.form__control {
     background-color: #141414 !important;
-    border: 1px solid #fff !important;
+    border: 1px solid white !important;
     border-radius: 20px 0px 0px 20px;
 }
 .btn.btn--primary.js-valider-recherche {
     background-color: #141414 !important;
-    color: #fff !important;
-    border: 1px solid #fff !important;
+    color: white !important;
+    border: 1px solid white !important;
     border-radius: 0px 20px 20px 0px;
 }
 .btn.btn--primary.js-afficherNouveauMessage {
     background-color: #484848 !important;
-    color: #fff !important;
-    border: 1px solid #fff !important;
+    color: white !important;
+    border: 1px solid white !important;
     border-radius: 20px 20px 20px 20px;
 }
 .icon--more-primary {
@@ -273,8 +293,8 @@ li.row--full {
 }
 .cartouche--neutral {
     --background-color: #606060 !important;
-    --border-color: #fff !important;
-    --color: #fff !important;
+    --border-color: white !important;
+    --color: white !important;
     --cartouche-active--box-shadow-color: var(--color-comp-light);
 }
 #header_profil, #footer, #chatmd-anchor, #header_connexion, .list--inlined:not(.tabs__list), .fr-callout, .sidebar {
@@ -284,7 +304,7 @@ li.row--full {
     background: #3d3d3d;
 }
 .user {
-    color: #fff !important;
+    color: white !important;
 }
 .btn--inverted {
     color: #b2b2b2 !important;
@@ -296,31 +316,29 @@ li.row--full {
     background: #1f1f1f !important;
     color: #d8d8d8 !important;
 }
-.pane {
-    background-color: #323232 !important;
-}
-.btn--as-link, .btn--as-link-underline {
-    color: #fff !important;
+.btn--as-link:not(.btn.btn--as-link.btn--naked.js-breadcrumb__btn-expand) , .btn--as-link-underline {
+    color: white !important;
 }
 .cahier_texte {
     background: #121212 !important;
-    color: #fff !important;
+    color: white !important;
 }
 /* files */
 article.card {
-    border: 4px solid #000000;
-    border-radius: var(--rounded)
+    border: 4px solid black;
+    border-radius: var(--rounded);
+    background: #3ca1d8 !important
 }
 .card:before {
     border-radius: var(--rounded)-5px;
 }
 #js-fullscreen span {
-    color: #fff !important;
+    color: white !important;
 }
 /* that one weird page */
 #page {
     background-color: #121212 !important;
-    color: #ffffff !important;
+    color: white !important;
 }
 #navigation_cahier_texte {
     background-color: #121212 !important;
@@ -330,31 +348,33 @@ article.card {
     border-radius: var(--rounded)/2;
 }
 select.form__control {
-    color: #ffffff !important;
+    color: white !important;
     border-radius: var(--rounded)/2;
 }
 .cartouche--bg-comp-light {
-    color: #fff !important;
+    color: white !important;
     background: #323232
-    border-color: #ffffff !important;
+    border-color: white !important;
 }
 
 /*expiration*/
 
 .modal__body.js-modal__body {
-    color: #fff !important;
+    color: white !important;
     background-color: var(--panelbg) !important;
     border: 2px solid var(--bordercolor) !important;
     border-radius: var(--rounded);
     overflow: hidden;
 }
 .js-session-extender-connect.btn.btn--primary {
-    background-color: #000 !important;
-    color: #fff !important;
-    border-radius: var(--rounded)/2 !important;
+    background-color: black !important;
+    color: white !important;
 }
 .btn.btn--warn.js-btn--warn.js-session-extender_cancel {
-    border-radius: var(--rounded)/2 !important;
+    background: none !important;
+}
+.modal__dialog.js-modal__dialog {
+    color: none !important;
 }
 
 /* cookies stuff */
@@ -362,36 +382,36 @@ select.form__control {
 background: #323232 !important;
 }
 #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert {
-color: #ffffff !important;
+color: white !important;
 }
 .tarteaucitronH1, .tarteaucitronH2 {
-    color: #ffffff !important;
+    color: white !important;
     background: #474747 !important
 }
 #tarteaucitronClosePanel, #tarteaucitronAlertSmall #tarteaucitronCookiesListContainer #tarteaucitronClosePanelCookie {
 background: #474747 !important;
-color: #ffffff !important;
+color: white !important;
 }
 #tarteaucitronServices .tarteaucitronMainLine {
 background: #474747 !important;
 }
 #tarteaucitronInfo {
-color: #ffffff !important;
+color: white !important;
 background: #464646 !important;
 }
 #tarteaucitronBorder #tarteaucitronTitle {
-color: #ffffff !important;
+color: white !important;
 }
 button#tarteaucitronBack {
-    background: #000000 !important;
+    background: black !important;
 }
 #tarteaucitron a {
-color: #fff !important;
+color: white !important;
 }
 #tarteaucitron div, #tarteaucitron li, #tarteaucitron span:not(.tarteaucitronCheck, .tarteaucitronCross), .tarteaucitronTitle button {
-color: #fff !important;
+color: white !important;
 background: #464646 !important;
 }
 .tarteaucitronPlus::before {
-    color: #fff !important;
+    color: white !important;
 }
