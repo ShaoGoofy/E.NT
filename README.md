@@ -12,4 +12,4 @@ Default config
 <img width="2481" height="1373" alt="IMG_0724" src="https://github.com/user-attachments/assets/d277c538-3ab7-4f75-acf3-c90a92a32f18" />
 
 Custom config
-<img width="2481" height="1373" alt="image" src="https://github.com/user-attachments/assets/c7e4f3b6-96b9-434b-b6f4-a08c60e54c6a" />
+<img width="2481" height="1373" alt="image" src="https://github.com/user-attachments/assets/fbdae849-43c2-48c8-9259-ec624a112d5e" />
