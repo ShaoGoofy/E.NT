@@ -9,7 +9,7 @@ If you're using this on firefox, just be aware that while testing on linux, kde 
 Currently W.I.P.
 
 Default config
-<img width="2481" height="1373" alt="image" src="https://github.com/user-attachments/assets/289f8822-2398-4cde-a66e-e4be5403cf00" />
+<img width="2481" height="1373" alt="IMG_0724" src="https://github.com/user-attachments/assets/d277c538-3ab7-4f75-acf3-c90a92a32f18" />
 
 Custom config
 <img width="2481" height="1373" alt="image" src="https://github.com/user-attachments/assets/c7e4f3b6-96b9-434b-b6f4-a08c60e54c6a" />
